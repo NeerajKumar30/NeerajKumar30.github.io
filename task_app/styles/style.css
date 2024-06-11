@@ -17,6 +17,7 @@ select {
 }
 
 .container {
+    margin: 1rem;
     background-color: whitesmoke;
     display: block;
 }

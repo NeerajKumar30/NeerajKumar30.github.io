@@ -21,77 +21,94 @@
 
 <body>
     <div class="container">
-        <div class="main1">
-            <h1>Welcome to the TODO App</h1>
-            <!-- output display -->
-            <ul class="output-field">
-            </ul>
-            <form class="menu">
-                <div class="mb-3">
-                    <select class="form-select" name="form-select" id="type">
-                        <option selected>Please select the task</option>
-                        <option value="Note for Me">Note for Me</option>
-                        <option value="To Tell Someone">To Tell Someone</option>
-                    </select>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="listing-tab" data-bs-toggle="tab" data-bs-target="#listing"
+                    type="button" aria-selected="true">Listing</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tabling-tab" data-bs-toggle="tab" data-bs-target="#tabling" type="button"
+                    aria-selected="false">Tabling</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="listing" role="tabpanel" aria-labelledby="listing-tab">
+                <div class="main1">
+                    <h1>Welcome to the TODO App</h1>
+                    <!-- output display -->
+                    <ul class="output-field">
+                    </ul>
+                    <form class="menu">
+                        <div class="mb-3">
+                            <select class="form-select" name="form-select" id="type">
+                                <option selected>Please select the task</option>
+                                <option value="Note for Me">Note for Me</option>
+                                <option value="To Tell Someone">To Tell Someone</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="details" placeholder="Enter the Details"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-outline-primary">Add</button>
+                            <button onclick="window.print()" class="btn btn-outline-warning">Print</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <textarea class="form-control" id="details" placeholder="Enter the Details"></textarea>
+            </div>
+            <div class="tab-pane fade" id="tabling" role="tabpanel" aria-labelledby="tabling-tab">
+                <div class="main2">
+                    <h1>Mini Person PhoneBook</h1>
+                    <table class="table table-striped table-dark">
+                        <thead>
+                            <tr>
+                                <th class="col">First Name</th>
+                                <th class="col">Middle Name</th>
+                                <th class="col">Last Name</th>
+                                <th class="col">Email</th>
+                                <th class="col">Std Code</th>
+                                <th class="col">Phone number</th>
+                            </tr>
+                        </thead>
+                        <tbody id="output-row">
+                            <!-- output to be displayed -->
+                        </tbody>
+                    </table>
+                    <form class="table_info">
+                        <div class="mb-3 mt-3">
+                            <input type="text" class="form-control" id="firstname"
+                                placeholder="Enter the First Name: " />
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <input type="text" class="form-control" id="middlename"
+                                placeholder="Enter the Middle Name: " />
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <input type="text" class="form-control" id="lastname" placeholder="Enter the Last Name: " />
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <input type="email" class="form-control" id="email" placeholder="Enter the Email Id: " />
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">
+                                <input type="number" class="input-group-text form-control" id="stdcode"
+                                    placeholder="Code: " maxlength="2" max="99" min="1" />
+                            </span>
+                            <input type="number" class="form-control" id="phno" placeholder="Enter the Phone Number: "
+                                maxlength="10" />
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <button type="submit" class="btn btn-outline-primary">Add</button>
+                            <button onclick="window.print()" class="btn btn-outline-warning">Print</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <button type="submit" class="btn btn-outline-primary">Add</button>
-                    <button onclick="window.print()" class="btn btn-outline-warning">Print</button>
-                </div>
-            </form>
-        </div>
-
-        <div class="main2">
-            <h1>Mini Person PhoneBook</h1>
-            <table class="table table-striped table-dark">
-                <thead>
-                    <tr>
-                        <th class="col">First Name</th>
-                        <th class="col">Middle Name</th>
-                        <th class="col">Last Name</th>
-                        <th class="col">Email</th>
-                        <th class="col">Std Code</th>
-                        <th class="col">Phone number</th>
-                    </tr>
-                </thead>
-                <tbody id="output-row">
-                    <!-- output to be displayed -->
-                </tbody>
-            </table>
-            <form class="table_info">
-                <div class="mb-3 mt-3">
-                    <input type="text" class="form-control" id="firstname" placeholder="Enter the First Name: " />
-                </div>
-                <div class="mb-3 mt-3">
-                    <input type="text" class="form-control" id="middlename" placeholder="Enter the Middle Name: " />
-                </div>
-                <div class="mb-3 mt-3">
-                    <input type="text" class="form-control" id="lastname" placeholder="Enter the Last Name: " />
-                </div>
-                <div class="mb-3 mt-3">
-                    <input type="email" class="form-control" id="email" placeholder="Enter the Email Id: " />
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">
-                        <input type="number" class="input-group-text form-control" id="stdcode" placeholder="Code: "
-                            maxlength="2" max="99" min="1" />
-                    </span>
-                    <input type="number" class="form-control" id="phno" placeholder="Enter the Phone Number: "
-                        maxlength="10" />
-                </div>
-                <div class="mb-3 mt-3">
-                    <button type="submit" class="btn btn-outline-primary">Add</button>
-                    <button onclick="window.print()" class="btn btn-outline-warning">Print</button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
     <script src="./scripts/script.js" type="module"></script>
     <footer class="foot">
-        Copyright&nbsp;&copy;&nbsp;Neeraj Kumar, 2023 <br/> Developed using Typescript
+        Copyright&nbsp;&copy;&nbsp;Neeraj Kumar, 2023 <br /> Developed using Typescript
     </footer>
 </body>
 
